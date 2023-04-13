@@ -1,0 +1,33 @@
+-Create a Grocery Store Database-
+
+CREATE TABLE bike_store (ID INTEGER PRIMARY KEY, model TEXT, stock INTEGER, price INTEGER, likelihood_of_repair INTEGER);
+
+INSERT INTO bike_store VALUES (1, "T1", 13, 600, 0.37);
+
+-Checks values are inserted correctly
+SELECT * FROM bike_store;
+
+INSERT INTO bike_store VALUES (2, "T2", 9, 715, 0.35);
+INSERT INTO bike_store VALUES (3, "S", 15, 800, 0.27);
+INSERT INTO bike_store VALUES (4, "S2", 20, 850, 0.31);
+INSERT INTO bike_store VALUES (5, "S3", 5, 850, 0.22);
+INSERT INTO bike_store VALUES (6, "Q1", 17, 400, 0.45);
+INSERT INTO bike_store VALUES (7, "Q2", 12, 420, 0.44);
+INSERT INTO bike_store VALUES (8, "Q2X", 2, 500, 0.23);
+INSERT INTO bike_store VALUES (9, "Q3", 4, 500, 0.18);
+INSERT INTO bike_store VALUES (10, "X", 10, 1000, 0.1);
+INSERT INTO bike_store VALUES (11, "X1", 8, 1050, 0.09);
+INSERT INTO bike_store VALUES (12, "X1S", 6, 950, 0.13);
+INSERT INTO bike_store VALUES (13, "X2", 7, 1100, 0.05);
+INSERT INTO bike_store VALUES (14, "GTR", 3, 1700, 0.02);
+INSERT INTO bike_store VALUES (15, "GTR_MAX", 2, 2000, 0.03);
+
+-display database ordered by price
+SELECT * FROM bike_store ORDER BY price;
+
+-count stock of store items
+SELECT SUM(stock) FROM bike_store;
+
+-display database ordered by repair statistics
+SELECT * FROM bike_store ORDER BY likelihood_of_repair DESC;
+
