@@ -60,3 +60,17 @@ END AS energy_level
 FROM BIT_DB.spotifydata
 GROUP BY track_name
 ORDER BY energy;
+
+-Used CTE to determine average popularities and then designate 'Top Star' tag to specific group meeting set criteria
+with popularity_average_cte AS (
+SELECT
+S.artist_name,
+avg(S.popularity) as average_popularity
+FROM Spotifydata S
+GROUP BY s.artist_name
+)
+SELECT artist_name
+, average_popularity,
+'Top Star' AS tag
+FROM popularity_average_CTE
+WHERE average_popularity > 90;
